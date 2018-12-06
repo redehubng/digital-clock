@@ -6,6 +6,9 @@
         </title>
 
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
     </head>
     <body>
         <div class="wrapper">
@@ -13,9 +16,21 @@
                 <div class="dg-interface">
 
                     <div class="time">
-                        <div class="hour">12</div>
+                      
+                        <div class="hour tb">
+                            <span class="ht">12</span>
+                            <span class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
+                             <span class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
+                        </div>
+                       
                         <div class="col-sp">:</div>
-                        <div class="mins">22</div>
+                        <div class="mins tb">
+                            <span class="ht">22</span>
+                            <span class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
+                            <span class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
+                        </div>
+                       
+                        
                         <div class="col-sp">:</div>                        
                         <div class="sec">21</div>
                     </div>
@@ -23,7 +38,13 @@
 
                 </div>
                 <div class="settings">
-                    <span class="set-btn"></span>
+                    <span id="set-btn"><i class="fa fa-cog fa-2x"></i></span>
+                    <!-- <div class="mode">
+                       <input type="text" name="hour" placeholder="Hr">
+                       <input type="text" name="min" placeholder="Mn">
+                       <input type="text" name="sec" placeholder="Sc">
+                       <button type="submit">set</button>
+                    </div> -->
                 </div>
 
             </div>

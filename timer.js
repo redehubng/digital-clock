@@ -1,22 +1,26 @@
 
+// TIME BOX SHOWING TIME
+var timeBox = document.getElementsByClassName('tb');
 
-var x = setInterval(function() {
+// SET TIME BOX FOR EDIT
+var changer = document.getElementsByClassName('tc');
 
-  // Get todays date and time
-  var now = new Date().getTime();
+// SETTINGS BUTTON
+var setBtn = document.getElementById('set-btn');
 
-  var sec = Math.floor(now / 1000);
-  var mins = 
+var i;
 
+setBtn.onclick = function(){
+  // console.log(setBtn);
   
-  document.getElementById("demo").innerHTML = sec;
-
-  
-
-
-
-  if (distance < 0) {
-        clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+  for(i=0; i< changer.length; i++){
+    if( changer[i].style.display === "block"){
+      
+      changer[i].style.display = "none";
+    }else{
+      changer[i].style.display = "block";
+      
+    }
+    
   }
-}, 1000);
+}

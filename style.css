@@ -9,6 +9,14 @@ body{
     margin: 0;
 }
 
+.hide{
+    display: none;
+}
+
+.activate{
+    display: inline-flex;
+}
+
 .dc-con{
     position: relative;
     background: radial-gradient(rgb(255, 255, 255), rgb(191, 192, 192));
@@ -38,13 +46,18 @@ body{
 }
 
 .hour, .mins, .sec{
-
+    position: relative;
     width: 80px;
     height: 100px;
     display: inline-flex;
     background: #fff;
     border: 1px solid rgba(0 , 0, 0, 0.13);
     box-shadow:  0 1px 10px rgba(0, 0, 0, 0.062);
+}
+.set-tb{
+    display: none;
+    border-color: #085dbd;
+
 }
 
 .hour , .mins, .sec{
@@ -66,6 +79,29 @@ body{
     
 }
 
+.tc{
+    position: absolute;
+    cursor: pointer;
+    color: #b4b4b4;
+    display: none;
+}
+.tc-up:hover, .tc-down:hover{
+    color: #085dbd;
+}
+
+.tc-up{
+    top:-72px;
+    left: 10px;
+}
+.tc-down{
+    bottom:-66px;
+    left: 10px;
+}
+
+
+
+
+
 
 .col-sp{
     display: inline-flex;
@@ -82,14 +118,76 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
-    margin: 2rem;
+    margin: 3rem 2rem;
 }
-.set-btn{
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    display: block;
+ #set-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    /* display: inline-block; */
     background-color: #fff;
     box-shadow:  0 1px 10px rgba(0 , 0, 0, 0.23);
+    cursor: pointer; 
+    color: #888;
+    transition: .8s;
+
+}
+
+ #set-btn:hover{
+     box-shadow:  0 1px 16px rgba(0 , 0, 0, 0.37);
+     color: #085dbd;
+     transform: rotate(360deg);
+
+}
+
+.mode{
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    height: 40px;
+    width: 600px;
+    padding: 1rem 0 1rem 3rem;
+    background: #fff;
+    box-shadow:  0 1px 16px rgba(0 , 0, 0, 0.37);
+    display: inline-block;
+    margin-left: 2rem;
+    border-radius: 10px;
+
+}
+.mode::before{
+    content: "";
+    position: absolute;
+    top:21px;
+    left:-13px;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-right-color: #ffffff;
+    border-left: 0;
+}
+
+.mode input[type=text]{
+   width: 50px;
+   margin-right: 10px; 
+   padding: .8rem;
+   text-align:center;
+   border: none;
+}
+
+.mode button{
+    padding: .6rem 2rem;
+    border: 0;
+    background: #888;
+    color: #fff;
+    cursor: pointer;
+    box-shadow:  0 1px 5px rgba(0 , 0, 0, 0.23);
     
+}
+
+.mode button:hover{
+    background: #4d4c4c;
 }
