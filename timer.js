@@ -27,9 +27,7 @@ function changerToggle(){
 function borderToggle(){
   for (i = 0; i < timeBox.length; i++) {
     
-    if (timeBox.style.borderColor === "rgba(0, 0, 0, 0.13)"){
-        timeBox.style.borderColor
-    }
+    timeBox[i].classList.toggle("border-blue");
 
   }
 }
@@ -38,6 +36,7 @@ function borderToggle(){
 setBtn.onclick = function(){
 
   changerToggle();
+  borderToggle();
   
 }
 
