@@ -10,17 +10,34 @@ var setBtn = document.getElementById('set-btn');
 
 var i;
 
-setBtn.onclick = function(){
-  // console.log(setBtn);
-  
-  for(i=0; i< changer.length; i++){
-    if( changer[i].style.display === "block"){
-      
+// FUCNTION FOR CHANGING ARROWS
+function changerToggle(){
+  for (i = 0; i < changer.length; i++) {
+    if (changer[i].style.display === "block") {
+
       changer[i].style.display = "none";
-    }else{
+    } else {
       changer[i].style.display = "block";
-      
+
     }
-    
+
   }
 }
+// FUCNTION FOR BOX BORDER CHANGE
+function borderToggle(){
+  for (i = 0; i < timeBox.length; i++) {
+    
+    if (timeBox.style.borderColor === "rgba(0, 0, 0, 0.13)"){
+        timeBox.style.borderColor
+    }
+
+  }
+}
+
+// DISPLAY TIME CHANGING ARROWS
+setBtn.onclick = function(){
+
+  changerToggle();
+  
+}
+
