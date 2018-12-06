@@ -16,16 +16,21 @@
                 <div class="dg-interface">
 
                     <div class="time">
-                      
+
+                      <!-- HOUR -->
                         <div class="hour tb">
                             <span class="ht">12</span>
+                            <!-- up - down toggle -->
                             <span class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
                              <span class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
                         </div>
                        
                         <div class="col-sp">:</div>
+
+                        <!-- MINUTE -->
                         <div class="mins tb">
                             <span class="ht">22</span>
+                            <!-- up - down toggle -->
                             <span class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
                             <span class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
                         </div>
@@ -33,8 +38,19 @@
                         
                         <div class="col-sp">:</div>                        
                         <div class="sec">21</div>
+
+                        <!-- AM PM -->
+                        <div id="meridian">
+                            <span id="m-text">AM</span>
+                        </div>
                     </div>
-                    
+                    <div id="time-type">
+                        <span class="text">change to 24hrs time</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
 
                 </div>
                 <div class="settings">
