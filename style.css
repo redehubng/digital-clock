@@ -1,23 +1,23 @@
-body{
+body {
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.wrapper{
+.wrapper {
     display: flex;
     margin: 0;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.activate{
+.activate {
     display: inline-flex;
 }
 
-.dc-con{
+.dc-con {
     position: relative;
     background: radial-gradient(rgb(255, 255, 255), rgb(191, 192, 192));
     min-width: 100%;
@@ -27,7 +27,7 @@ body{
     justify-content: center;
 }
 
-.dg-interface{
+.dg-interface {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -38,91 +38,95 @@ body{
     background: #fff;
     margin: 0 auto;
     box-sizing: border-box;
-    box-shadow:  0 1px 10px rgba(0 , 0, 0, 0.23);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.23);
 }
-.time{
+
+.time {
     display: flex;
     justify-content: space-around;
     position: relative;
-   
 }
 
-.hour, .mins, .sec{
+.hour,
+.mins,
+.sec {
     position: relative;
     width: 80px;
     height: 100px;
     display: inline-flex;
     background: #fff;
-    border: 1px solid ;
+    border: 1px solid;
     border-color: rgba(0, 0, 0, 0.13);
-    box-shadow:  0 1px 10px rgba(0, 0, 0, 0.062);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.062);
 }
-.border-blue{
+
+.border-blue {
     border-color: #085dbd;
 }
-.set-tb{
+
+.set-tb {
     display: none;
     border-color: #085dbd;
-
 }
 
-.hour , .mins, .sec{
+.hour,
+.mins,
+.sec {
     flex-direction: column;
     justify-content: center;
     font-size: 3rem;
     text-align: center;
     color: #777;
-    
 }
 
-.sec{
+.sec {
     flex-direction: column;
     justify-content: center;
-
     font-size: 2rem;
     text-align: center;
     color: #c70f3d;
-    
 }
 
-#meridian{
+#meridian {
     position: absolute;
     bottom: 10px;
     right: -30px;
     color: #888;
 }
 
-#meridianSelect{
+#meridianSelect {
     width: 70px;
     padding: 4px 10px;
     border: 1px solid rgba(0, 0, 0, 0.13);
     display: block;
-   position: absolute;
+    position: absolute;
     right: -39px;
     bottom: -1px;
 }
 
-
-.tc{
+.tc {
     position: absolute;
     cursor: pointer;
     color: #b4b4b4;
     display: none;
 }
-.tc-up:hover, .tc-down:hover{
+
+.tc-up:hover,
+.tc-down:hover {
     color: #085dbd;
 }
 
-.tc-up{
-    top:-72px;
-    left: 10px;
-}
-.tc-down{
-    bottom:-66px;
+.tc-up {
+    top: -72px;
     left: 10px;
 }
 
-#time-type{
+.tc-down {
+    bottom: -66px;
+    left: 10px;
+}
+
+#time-type {
     display: none;
     position: absolute;
     bottom: 5px;
@@ -131,7 +135,7 @@ body{
     transition: all .5s;
 }
 
-#time-type span{
+#time-type span {
     display: inline-block;
     padding-top: 10px;
     padding-right: 10px;
@@ -139,10 +143,7 @@ body{
     color: #888;
 }
 
-
-
-
-.col-sp{
+.col-sp {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -152,14 +153,14 @@ body{
     text-align: center;
 }
 
-.settings{
-    
+.settings {
     position: absolute;
     bottom: 0;
     left: 0;
     margin: 3rem 2rem;
 }
- #set-btn{
+
+#set-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -169,21 +170,36 @@ body{
     border-radius: 30px;
     /* display: inline-block; */
     background-color: #fff;
-    box-shadow:  0 1px 10px rgba(0 , 0, 0, 0.23);
-    cursor: pointer; 
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.23);
+    cursor: pointer;
     color: #888;
     transition: .8s;
-
 }
 
- #set-btn:hover{
-     box-shadow:  0 1px 16px rgba(0 , 0, 0, 0.37);
-     color: #085dbd;
-     transform: rotate(360deg);
-
+#setbtn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    /* display: inline-block; */
+    background-color: #fff;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.23);
+    cursor: pointer;
+    color: rgb(14, 160, 50);
+    position: absolute;
+    bottom: 0px;
 }
 
-.mode{
+#set-btn:hover {
+    box-shadow: 0 1px 16px rgba(0, 0, 0, 0.37);
+    color: #085dbd;
+    transform: rotate(360deg);
+}
+
+.mode {
     position: absolute;
     bottom: -10px;
     left: 30px;
@@ -191,17 +207,17 @@ body{
     width: 600px;
     padding: 1rem 0 1rem 3rem;
     background: #fff;
-    box-shadow:  0 1px 16px rgba(0 , 0, 0, 0.37);
+    box-shadow: 0 1px 16px rgba(0, 0, 0, 0.37);
     display: inline-block;
     margin-left: 2rem;
     border-radius: 10px;
-
 }
-.mode::before{
+
+.mode::before {
     content: "";
     position: absolute;
-    top:21px;
-    left:-13px;
+    top: 21px;
+    left: -13px;
     width: 0;
     height: 0;
     border: 15px solid transparent;
@@ -209,88 +225,94 @@ body{
     border-left: 0;
 }
 
-.mode input[type=text]{
-   width: 50px;
-   margin-right: 10px; 
-   padding: .8rem;
-   text-align:center;
-   border: none;
+.mode input[type=text] {
+    width: 50px;
+    margin-right: 10px;
+    padding: .8rem;
+    text-align: center;
+    border: none;
 }
 
-.mode button{
+.mode button {
     padding: .6rem 2rem;
     border: 0;
     background: #888;
     color: #fff;
     cursor: pointer;
-    box-shadow:  0 1px 5px rgba(0 , 0, 0, 0.23);
-    
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.23);
 }
 
-.mode button:hover{
+.mode button:hover {
     background: #4d4c4c;
 }
+
 
 /* toggle slider */
 
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
+
 
 /* Hide default HTML checkbox */
+
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
+
 /* The slider */
+
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #085dbd;
+input:checked+.slider {
+    background-color: #085dbd;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #085dbd;
+input:focus+.slider {
+    box-shadow: 0 0 1px #085dbd;
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
+
 
 /* Rounded sliders */
+
 .slider.round {
-  border-radius: 34px;
+    border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }

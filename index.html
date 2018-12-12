@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Digital Clock
-        </title>
 
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-        crossorigin="anonymous">
+<head>
+    <title>
+        Digital Clock
+    </title>
 
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="dc-con">
-                <div class="dg-interface">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-                    <div class="time">
+</head>
 
-                      <!-- HOUR -->
-                        <div class="hour tb">
-                            <span class="ht">12</span>
-                            <!-- up - down toggle -->
-                            <span class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
-                             <span class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
-                        </div>
-                       
-                        <div class="col-sp">:</div>
+<body>
+    <div class="wrapper">
+        <div class="dc-con">
+            <div class="dg-interface">
 
-                        <!-- MINUTE -->
-                        <div class="mins tb">
-                            <span class="ht">22</span>
-                            <!-- up - down toggle -->
-                            <span class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
-                            <span class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
-                        </div>
-                       
-                        
-                        <div class="col-sp">:</div>                        
-                        <div class="sec">21</div>
+                <div class="time">
 
-                        <!-- AM PM -->
-                        <div id="meridian">
-                            <span id="m-text">AM</span>
-                        </div>
+                    <!-- HOUR -->
+                    <div class="hour tb">
+                        <span id="hour" class="ht">12</span>
+                        <!-- up - down toggle -->
+                        <span id="hInc" class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
+                        <span id="hdcr" class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
                     </div>
-                    <div id="time-type">
-                        <span class="text">change to 24hrs time</span>
-                        <label class="switch">
-                            <input type="checkbox">
+
+                    <div class="col-sp">:</div>
+
+                    <!-- MINUTE -->
+                    <div class="mins tb">
+                        <span id="minutes" class="ht">22</span>
+                        <!-- up - down toggle -->
+                        <span id="mInc" class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
+                        <span id="mdcr" class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
+                    </div>
+
+
+                    <div class="col-sp">:</div>
+                    <div id="second" class="sec">21</div>
+
+                    <!-- AM PM -->
+                    <div id="meridian">
+                        <span id="m-text">AM</span>
+                    </div>
+                </div>
+                <div id="time-type">
+                    <span class="text">change to 24hrs time</span>
+                    <label class="switch">
+                            <input checked type="checkbox">
                             <span class="slider round"></span>
                         </label>
-                    </div>
-
                 </div>
-                <div class="settings">
-                    <span id="set-btn"><i class="fa fa-cog fa-2x"></i></span>
-                    <!-- <div class="mode">
+
+            </div>
+            <div class="settings">
+                <span id="set-btn"><i class="fa fa-cog fa-2x"></i></span>
+                <span id="setbtn"><i class="fa fa-check fa-2x"></i></span>
+                <!-- <div class="mode">
                        <input type="text" name="hour" placeholder="Hr">
                        <input type="text" name="min" placeholder="Mn">
                        <input type="text" name="sec" placeholder="Sc">
                        <button type="submit">set</button>
                     </div> -->
-                </div>
-
             </div>
-        </div>
 
-        <script src="timer.js"></script>
-    </body>
+        </div>
+    </div>
+
+    <script src="timer.js"></script>
+</body>
+
 </html>
