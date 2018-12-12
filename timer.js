@@ -217,6 +217,7 @@ Minute_decrement.onclick = function() {
     append();
 };
 
+//variable that starts the second interval
 var z;
 
 mark.onclick = function() {
@@ -232,8 +233,8 @@ mark.onclick = function() {
 
             // Time calculations for hours, minutes and seconds
 
-            hours = hours;
-            minutes = minutes;
+            hours;
+            minutes;
             seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             if (seconds == 59) {
