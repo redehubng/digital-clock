@@ -20,7 +20,7 @@
 
                     <!-- HOUR -->
                     <div class="hour tb">
-                        <span id="hour" class="ht">12</span>
+                        <span id="hour" class="ht">--</span>
                         <!-- up - down toggle -->
                         <span id="hInc" class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
                         <span id="hdcr" class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
@@ -30,7 +30,7 @@
 
                     <!-- MINUTE -->
                     <div class="mins tb">
-                        <span id="minutes" class="ht">22</span>
+                        <span id="minutes" class="ht">--</span>
                         <!-- up - down toggle -->
                         <span id="mInc" class="h-up tc tc-up"><i class="fa fa-caret-up fa-2x"></i></span>
                         <span id="mdcr" class="h-down tc tc-down"><i class="fa fa-caret-down fa-2x"></i></span>
@@ -38,17 +38,19 @@
 
 
                     <div class="col-sp">:</div>
-                    <div id="second" class="sec">21</div>
+                    <div id="second" class="sec">--</div>
 
-                    <!-- AM PM -->
-                    <div id="meridian">
-                        <span id="m-text">AM</span>
-                    </div>
+
+                    <span id="m-texts" style="margin-top:83px"> </span>
+                    <select name="Am" id="Am" style="display:none;">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
                 </div>
                 <div id="time-type">
-                    <span class="text">change to 24hrs time</span>
+                    <span class="text">change to 12hrs time</span>
                     <label class="switch">
-                            <input checked type="checkbox">
+                            <input id="Twelve-hours"  type="checkbox">
                             <span class="slider round"></span>
                         </label>
                 </div>
@@ -57,12 +59,7 @@
             <div class="settings">
                 <span id="set-btn"><i class="fa fa-cog fa-2x"></i></span>
                 <span id="setbtn"><i class="fa fa-check fa-2x"></i></span>
-                <!-- <div class="mode">
-                       <input type="text" name="hour" placeholder="Hr">
-                       <input type="text" name="min" placeholder="Mn">
-                       <input type="text" name="sec" placeholder="Sc">
-                       <button type="submit">set</button>
-                    </div> -->
+
             </div>
 
         </div>

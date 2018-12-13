@@ -10,11 +10,14 @@ var toggleSwitch = document.getElementById('time-type');
 // SETTINGS BUTTON
 var setBtn = document.getElementById('set-btn');
 
-// AM PM DROPDOWN
-var meridianNode = document.getElementById('meridian');
+
+
 
 // AM PM TEXT
-var mtext = document.getElementById("m-text");
+
+
+
+var mt = document.getElementById("Am");
 
 var i;
 
@@ -55,61 +58,33 @@ function borderToggle() {
     }
 }
 
-// AM PM SELECT ELEMENT
-
-function meridianSelection() {
-
-    var selectNode = document.createElement("select");
-
-    // options to be added
-    var optionsList = ['AM', 'PM'];
-
-    // select id
-    selectNode.id = "meridianSelect";
-
-    for (i = 0; i < optionsList.length; i++) {
-        var options = document.createElement("option");
-        options.value = optionsList[i];
-        options.text = optionsList[i];
-        selectNode.appendChild(options);
-    }
-    // append element
-    meridianNode.appendChild(selectNode);
-
-    console.log(selectNode);
-    return meridianNode;
-
-}
-
-function removeSelect(elementId) {
-    // Removes an element from the document
-    var element = document.getElementById(elementId);
-    element.parentNode.removeChild(element);
-}
-
 // DISPLAY TIME CHANGING ARROWS
 setBtn.onclick = function() {
-
+    //toggle on all the time settings
     changerToggle();
     borderToggle();
     switchToggle();
 
-    if (document.getElementById("meridianSelect")) {
-        removeSelect('meridianSelect');
-    } else {
-        meridianSelection();
-    }
-
-    mtext.classList.toggle("hide");
+    //display the green check mark 
     mark.style.display = "flex";
 
+    //display meridian time for 12 hours settings
+    mt.style.display = "inline-flex";
+    //hidding the meridian appended to the body
+
+    text.style.display = "none";
+    //clear intervals to enable settings
     clearInterval(x);
+    clearInterval(interval);
 }
 
+// getting elements from the body
 var hour = document.getElementById("hour");
 var minute = document.getElementById("minutes");
 var second = document.getElementById("second");
 var mark = document.getElementById("setbtn");
+var HourType = document.getElementById("Twelve-hours");
+var text = document.getElementById("m-texts");
 
 //time setter
 var Hour_increment = document.getElementById("hInc");
@@ -140,25 +115,6 @@ var x = setInterval(function() {
 
     hours = Math.floor(((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + 1);
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    // seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-
-    append();
-
-
-}, 1000);
-var y = setInterval(function() {
-
-    // Get todays date and time
-    var now = new Date().getTime();
-
-
-    var distance = now;
-
-    // Time calculations for hours, minutes and seconds
-
-    // hours = Math.floor(((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + 1);
-    // minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 
@@ -167,8 +123,6 @@ var y = setInterval(function() {
 
 }, 1000);
 
-
-// the apend function
 
 function append() {
     hour.innerText = hours;
@@ -179,6 +133,8 @@ function append() {
 //the incrementing
 
 //increase the hour
+
+
 Hour_increment.onclick = function() {
     hours += 1;
 
@@ -199,6 +155,8 @@ Hour_decrement.onclick = function() {
     }
     append();
 };
+
+// increasing minutes
 Minute_increment.onclick = function() {
     minutes += 1;
 
@@ -208,7 +166,7 @@ Minute_increment.onclick = function() {
     append();
 };
 
-// decrease the hour
+// decrease the minutes
 Minute_decrement.onclick = function() {
     minutes -= 1;
     if (minutes < 0) {
@@ -218,53 +176,80 @@ Minute_decrement.onclick = function() {
 };
 
 //variable that starts the second interval
+
 var z;
 
 mark.onclick = function() {
+        //append the countdown to the variable z
+        z = zoo();
 
-    function z() {
-        setInterval(function() {
+        // toggle off the setting buttons
+        changerToggle();
+        borderToggle();
+        switchToggle();
 
-            // Get todays date and time
-            var now = new Date().getTime();
+        //appending the selected meridian time to the body
+        text.innerText = mt.value;
+        // disabling the green check mark and the meridian setter
+        mark.style.display = "none";
+        mt.style.display = "none";
+    }
+    //making the second interval global for accessibility
+var interval;
+
+function zoo() {
+
+    var i = Number(Math.floor((hours * 60 * 60) + (minutes * 60) + seconds));;
+
+    interval = setInterval(increment, 1000);
+    //the count dowm after the time is set
 
 
-            var distance = now;
 
-            // Time calculations for hours, minutes and seconds
+    function increment() {
+        i = i + 1;
 
-            hours;
-            minutes;
-            seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        if (HourType.checked === true) {
 
-            if (seconds == 59) {
-                return minutes = minutes + 1;
-            };
-            if (minutes == 59 + 1) {
-                hours += 1;
-            };
 
-            minutes = minutes % 60;
+            hours = Math.floor((i % (60 * 60 * 12)) / (60 * 60));
+            minutes = Math.floor((i % (60 * 60)) / 60);
+            seconds = Math.floor(i % 60);
+
+            text.style.display = "block";
+
+
+
+        } else {
+
+
+            hours = Math.floor((i % (60 * 60 * 24)) / (60 * 60));
+            minutes = Math.floor((i % (60 * 60)) / 60);
+            seconds = Math.floor(i % 60);
 
             append();
 
+        };
 
-        }, 1000);
+        // change the time at midnight to Am
+        if (HourType.checked === true && hours == 11 && minutes == 59 && seconds === 59 && text.innerText === "PM") {
+            hours = 0;
+            minutes = 0;
+            text.innerText = "AM";
+        }
+
+        // aranging 12p afternoon
+        if (HourType.checked === true && hours == 0 && text.innerText === "PM") {
+            hours = 12;
+        }
+
+        //aranging 12:00 PM
+        if (HourType.checked === true && hours == 11 && minutes == 59 && seconds === 59 && text.innerText === "AM") {
+            hours = 12;
+            text.innerText = "PM"
+        }
+        append();
 
     }
 
-    z = z();
-    changerToggle();
-    borderToggle();
-    switchToggle();
-
-    if (document.getElementById("meridianSelect")) {
-        removeSelect('meridianSelect');
-    } else {
-        meridianSelection();
-    }
-
-    mtext.classList.toggle("hide");
-
-    mark.style.display = "none";
 }
