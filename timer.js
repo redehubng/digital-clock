@@ -117,7 +117,12 @@ var x = setInterval(function() {
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
     append();
 
 
@@ -226,7 +231,9 @@ function zoo() {
             hours = Math.floor((i % (60 * 60 * 24)) / (60 * 60));
             minutes = Math.floor((i % (60 * 60)) / 60);
             seconds = Math.floor(i % 60);
-
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
             append();
 
         };
@@ -247,6 +254,12 @@ function zoo() {
         if (HourType.checked === true && hours == 11 && minutes == 59 && seconds === 59 && text.innerText === "AM") {
             hours = 12;
             text.innerText = "PM"
+        }
+
+        //add a zero to munite
+
+        if (minutes < 10) {
+            minutes = "0" + minutes;
         }
         append();
 
