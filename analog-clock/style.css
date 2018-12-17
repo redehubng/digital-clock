@@ -1,0 +1,105 @@
+#clock-container {
+    width: 300px;
+    background: #e1e1e1;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    top: 200px;
+    left: 40%;
+    box-shadow: 0 0 9px -1px;
+}
+
+.time-container {
+    position: relative;
+    top: 19px;
+}
+
+#hours {
+    transform: rotate(-90deg);
+    position: relative;
+    transform-origin: top left;
+    left: 144px;
+    width: 90px;
+    height: 4px;
+    background: #bbb;
+    top: 124px;
+    box-shadow: 0 0 2px 1px;
+}
+
+#minutes {
+    position: relative;
+    left: 144px;
+    width: 105px;
+    height: 4px;
+    background: rgb(66, 66, 66);
+    top: 121px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    box-shadow: 0 0 2px;
+}
+
+#seconds {
+    position: relative;
+    left: 146px;
+    width: 111px;
+    height: 4px;
+    background: rgb(253, 7, 7);
+    top: 112px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    box-shadow: 0 0 2px 1px;
+}
+
+#cover {
+    position: relative;
+    left: 130px;
+    width: 36px;
+    height: 36px;
+    background: rgb(0, 0, 0);
+    top: 87px;
+    border-radius: 50%;
+}
+
+.time {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background: rgb(0, 0, 0);
+}
+
+.n {
+    transform: rotate(90deg)
+}
+
+.one {
+    left: 6px;
+    top: 135px;
+}
+
+.two {
+    left: 270px;
+    top: 135px;
+}
+
+.three {
+    left: 139px;
+    top: -4px;
+}
+
+.four {
+    left: 139px;
+    top: 254px;
+}
+
+.clock-hands {
+    position: relative;
+    top: 25px;
+}
+
+@media screen and (max-width: 764px) {
+    #clock-container {
+        margin: auto auto;
+        top: 100px;
+        left: 0%;
+    }
+}
